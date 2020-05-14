@@ -5,28 +5,47 @@ session_start();
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Extranet GBAF</title>
-        <meta name="description" content="Extranet GBAF">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <script src="https://kit.fontawesome.com/b49cecd785.js" crossorigin="anonymous"></script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
 
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+        <?php
+        if (isset($title) && $title!=null) {
+            echo $title;
+        } else {
+            echo 'Extranet GBAF';
+        }
+
+        ?>
+
+
+    </title>
+    <meta name="description" content="Extranet GBAF">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/b49cecd785.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        
-<?php require 'includes/header.php';?>
 
-<?php include 'includes/presentation.php';?>
+    <?php require 'includes/header.php'; ?>
 
-<?php include 'includes/acteurs.php';?>
+    <div class="fullpage">
+        <?php include 'includes/presentation.php'; ?>
 
-<?php include 'includes/footer.php';?>
+
+        <?php require 'includes/routes.php'; ?>
+    </div>
+
+    <?php require 'includes/footer.php'; ?>
