@@ -26,6 +26,11 @@ Mai 2020
 body {
     width: 100%;
     margin: auto;
+    /* background-image: url(../images/banniere.jpg); */
+    /* background-color: rgba(0, 0, 0, 0.30);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
 }
 
 a,
@@ -51,25 +56,15 @@ ul {
 }
 
 header {
-    display: inline-flex;
-    place-content: flex-start space-between;
-    align-items: baseline;
+    display: flex;
     flex-wrap: wrap;
+    place-content: space-between space-between;
+    align-items: baseline;
     width: 100%;
     padding: 0em;
     padding-top: 0.1em;
     padding-bottom: 0.10em;
     height: auto;
-    margin: 0.1em;
-    margin-top: 0;
-}
-
-.logo_header {
-    /* width: 100%; */
-    max-width: 5em;
-    margin: 0.4em;
-    position: absolute;
-    top: 0;
 }
 
 .profil_header {
@@ -91,19 +86,20 @@ header {
 .fullpage {
     display: flex;
     flex-direction: column;
-    place-content: flex-start space-between;
-    align-items: baseline;
     flex-wrap: wrap;
     width: 100%;
     margin: auto;
     padding: 0em;
     padding-top: 0.1em;
     padding-bottom: 0.1em;
-    margin-top: 2em;
+    place-content: space-between pace-between;
+    align-items: flex-start;
+    margin-top: 5em;
 }
 
 form {
     margin: auto;
+    margin-bottom: 10em;
     width: 60%;
 }
 
@@ -118,11 +114,18 @@ fieldset {
     align-content: center;
 }
 
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: flex-start space-around;
+    align-items: baseline;
+}
+
 .footer {
     height: 100px;
     background-image: url("../images/footer_gbaf.png");
     background-repeat: repeat;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     margin-top: 2em;
@@ -131,8 +134,9 @@ fieldset {
 .presentation,
 .profil {
     word-wrap: break-word;
-    margin: 10px;
-    width: auto;
+    margin: auto;
+    margin-bottom: 2em;
+    width: 50%;
     padding-left: 2em;
     padding-right: 2em;
 }
@@ -151,7 +155,9 @@ fieldset {
         width: 100%;
         margin: auto;
     }
-    header {
+    header,
+    form,
+    .presentation {
         font-size: smaller;
     }
     .logo_header {
@@ -163,9 +169,6 @@ fieldset {
     }
     .fullpage {
         margin-top: 1em;
-    }
-    .presentation {
-        font-size: smaller;
     }
     form {
         margin: auto;
@@ -190,7 +193,7 @@ fieldset {
         height: 20px;
         background-image: url("../images/footer_gbaf_small.png");
         background-repeat: repeat;
-        position: relative;
+        position: fixed;
         bottom: 0;
         width: 100%;
         margin-top: 1em;

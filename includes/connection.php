@@ -2,7 +2,7 @@
 $title='Se Connecter';
 
 ?>
-<form method="POST" action="includes/inscription_post.php" name="form_connection" id ="form_connection">
+<form method="POST" action="includes/connection_post.php" name="form_connection" id ="form_connection">
 
 <fieldset>
 <legend>Se connecter</legend>

@@ -42,10 +42,8 @@ session_start();
     <?php require 'includes/header.php'; ?>
 
     <div class="fullpage">
-        <?php include 'includes/presentation.php'; ?>
 
-
-        <?php require 'includes/routes.php'; ?>
+    <?php require 'includes/routes.php'; ?>
     </div>
 
     <?php require 'includes/footer.php'; ?>
