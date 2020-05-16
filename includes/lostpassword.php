@@ -2,7 +2,7 @@
 $title='Mot de Passe oublié';
 
 ?>
-<form method="POST" action="" name="form_lostpwd" id ="form_lostpwd">
+<form method="POST" action="#" name="form_lostpwd" id ="form_lostpwd">
 
 <fieldset>
 <legend>Mot de passe oublié</legend>
@@ -15,6 +15,11 @@ $title='Mot de Passe oublié';
 <p class="input">
 <label>Question secrète : </label>
 <input type="text" name="question" id="question" placeholder="Ma couleur préférée">
+</p>
+
+<p class="input">
+<label>Réponse : </label>
+<input type="text" name="answer" id="answer" placeholder="Bleus">
 </p>
 
 <p class="inputbutton">

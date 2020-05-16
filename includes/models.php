@@ -20,18 +20,16 @@ function getprofil($login)
 {
     $bdd = connectBdd();
 
-    $getprofil = $bdd->prepare('select id_user ,nom ,prenom,username,password,question,response from account where id_user =:iduser');
-    $getprofil->execute(array('iduser' => $login));
+    $req = 'SELECT * FROM account WHERE username =:username';
 
-    /*     while ($getprofil = $query->fetch()) {
-    // echo '<br/><h3>' . $messages['pseudo'] . '</h3><p class="messagebox">' . $messages['message'] . '</p>';
-    $getprofil['id'];
-    }
-     */
+    $getprofil = $bdd->prepare($req);
+    $getprofil->execute(array('username' => $login));
 
-    return $getprofil;
+    $user = $getprofil->fetch();
+    return $user;
 
     $getprofil->closeCursor(); // Termine le traitement de la requête
+
 }
 
 function addProfil($name, $firstname, $login, $pwd, $question, $answer)
@@ -53,20 +51,22 @@ function addProfil($name, $firstname, $login, $pwd, $question, $answer)
 
 }
 
-function isProfilExist($pseudo){
+function isProfilExist($pseudo)
+{
 
     $bdd = connectBdd();
 
-    $isProfil = $bdd->prepare('select id_user ,nom ,prenom,username,password,question,response from account where username =:username');
+    $req = 'SELECT COUNT(id_user) as is_user_exist FROM account WHERE username = :username';
+    $isProfil = $bdd->prepare($req, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
     $isProfil->execute(array('username' => $pseudo));
 
-    return $getpisProfilrofil;
+    while ($data = $isProfil->fetch()) {
+        return $data['is_user_exist'];
+    }
+
+    return;
 
     $isProfil->closeCursor(); // Termine le traitement de la requête
 
 }
-
-
-$var=isProfilExist(mick);
-echo $var;
 
