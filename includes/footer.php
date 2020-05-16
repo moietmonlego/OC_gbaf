@@ -2,7 +2,7 @@
 
 <footer>
 
-
+Mentions Légales | Contact
    
 <?php
             if(isset($_GET['debug']) && $_GET['debug']==1){

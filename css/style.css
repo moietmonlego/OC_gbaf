@@ -56,16 +56,20 @@ header {
     align-items: baseline;
     flex-wrap: wrap;
     width: 100%;
-    margin: auto;
     padding: 0em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 0.1em;
+    padding-bottom: 0.10em;
+    height: auto;
+    margin: 0.1em;
+    margin-top: 0;
 }
 
 .logo_header {
     /* width: 100%; */
     max-width: 5em;
-    margin: auto;
+    margin: 0.4em;
+    position: absolute;
+    top: 0;
 }
 
 .profil_header {
@@ -78,10 +82,63 @@ header {
     color: #f71e00;
 }
 
+.banniere,
+.banniere img {
+    margin: auto;
+    width: 100%;
+}
+
+.fullpage {
+    display: flex;
+    flex-direction: column;
+    place-content: flex-start space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    padding: 0em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    margin-top: 2em;
+}
+
+form {
+    margin: auto;
+    width: 60%;
+}
+
+fieldset {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: center;
+}
+
 .footer {
     height: 100px;
     background-image: url("../images/footer_gbaf.png");
     background-repeat: repeat;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.presentation,
+.profil {
+    word-wrap: break-word;
+    margin: 10px;
+    width: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.presentation ul {
+    list-style-type: disc;
 }
 
 
@@ -91,6 +148,8 @@ header {
     /* Règle spécifique pour écran de petite résolution, genre smartphone et tablette */
     p {
         background-color: beige;
+        width: 100%;
+        margin: auto;
     }
     header {
         font-size: smaller;
@@ -102,9 +161,38 @@ header {
         font-size: 24px;
         color: #f71e00;
     }
+    .fullpage {
+        margin-top: 1em;
+    }
+    .presentation {
+        font-size: smaller;
+    }
+    form {
+        margin: auto;
+        width: 60%;
+    }
+    fieldset {
+        margin: auto;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: center;
+    }
+    fieldset p {
+        background-color: white;
+        width: auto;
+        margin: auto;
+    }
     .footer {
         height: 20px;
         background-image: url("../images/footer_gbaf_small.png");
         background-repeat: repeat;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 1em;
     }
 }
