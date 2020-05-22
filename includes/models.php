@@ -6,7 +6,8 @@ function getprofils($limit)
 {
     $bdd = connectBdd();
 
-    $req = 'SELECT id_user ,nom ,prenom,username,password,question,response FROM account WHERE 1 LIMIT :limit';
+    $req = 'SELECT id_user ,nom ,prenom,username,password,question,response 
+    FROM account WHERE 1 LIMIT :limit';
     $getprofils = $bdd->prepare($req, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
     $getprofils->bindValue(':limit', intval($limit), PDO::PARAM_INT);
     $getprofils->execute();
@@ -43,8 +44,7 @@ function addProfil($name, $firstname, $login, $pwd, $question, $answer)
     //$question = $_POST($question);
     //$answer = $_POST($answer);
 
-    $addprofil = $bdd->prepare('insert into account (nom ,prenom,username,password,question,response) VALUES (:name,:firstname,:login,:pwd,:question,:answer)');
-
+    $addprofil = $bdd->prepare('insert into account (nom ,prenom,username,password,question,response)  VALUES (:name,:firstname,:login,:pwd,:question,:answer)');
     $addprofil->execute(array('name' => $name, 'firstname' => $firstname, 'login' => $login, 'pwd' => $pwd, 'question' => $question, 'answer' => $answer));
     $addprofil->closeCursor();
     return;
@@ -109,9 +109,3 @@ function addPost($iduser, $idacteur, $post)
     $addPost->closeCursor();
     return;
 }
-
-addPost(1,1,"Bonjour premier post");
-
-$post = getpostacteur(1);
-
-echo $post;
