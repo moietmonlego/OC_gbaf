@@ -48,7 +48,6 @@ function addProfil($name, $firstname, $login, $pwd, $question, $answer)
     $addprofil->execute(array('name' => $name, 'firstname' => $firstname, 'login' => $login, 'pwd' => $pwd, 'question' => $question, 'answer' => $answer));
     $addprofil->closeCursor();
     return;
-
 }
 
 function isProfilExist($pseudo)
@@ -66,7 +65,53 @@ function isProfilExist($pseudo)
 
     return;
 
-    $isProfil->closeCursor(); // Termine le traitement de la requête
-
+    $isProfil->closeCursor();
 }
 
+function getpostacteur($idacteur)
+{
+    $bdd = connectBdd();
+
+    $req = 'SELECT * FROM post WHERE id_acteur =:idacteur';
+
+    $getpost = $bdd->prepare($req);
+    $getpost->execute(array('idacteur' => $idacteur));
+
+    $post = $getpost->fetch();
+    return $post;
+
+    $getpost->closeCursor();
+}
+
+function getpostpost($idpost)
+{
+    $bdd = connectBdd();
+
+    $req = 'SELECT * FROM post WHERE id_post =:idpost';
+
+    $getpostpost = $bdd->prepare($req);
+    $getpostpost->execute(array('idpost' => $idpost));
+
+    $post = $getpostpost->fetch();
+    return $post;
+
+    $getpostpost->closeCursor();
+}
+
+
+function addPost($iduser, $idacteur, $post)
+{
+    $bdd = connectBdd();
+
+    $addPost = $bdd->prepare('insert into post (id_user ,id_acteur,post) VALUES (:iduser,:idacteur,:post)');
+
+    $addPost->execute(array('iduser' => $iduser, 'idacteur' => $idacteur, 'post' => $post));
+    $addPost->closeCursor();
+    return;
+}
+
+addPost(1,1,"Bonjour premier post");
+
+$post = getpostacteur(1);
+
+echo $post;
